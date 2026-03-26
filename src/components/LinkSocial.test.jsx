@@ -1,19 +1,17 @@
-// import { render, screen } from '@testing-library/react'
-// import { describe, it, expect } from 'vitest';
-// import App from '../App.jsx';
+import App from '../App';
+import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
+import { describe, it, expect } from 'vitest';
 
-// describe('LinkSocial component', () => {
-//     it('renders link with correct attributes', () => {
-//         render(<App />)
+describe('LinkSocial component', () => {
+    it('renders link with correct attributes', () => {
+        render(<App />)
+        screen.debug();
 
-//         // lấy tất cả link
-//         const links = screen.getAllByRole('link')
-//         expect(links).toHaveLength(4);
-
-//         // kiểm tra text hiển thị
-//         expect(screen.getByText('GitHub')).toBeInTheDocument()
-//         expect(screen.getByText('Discord')).toBeInTheDocument()
-//         expect(screen.getByText('X.com')).toBeInTheDocument()
-//         expect(screen.getByText('Bluesky')).toBeInTheDocument()
-//     })
-// })
+        // kiểm tra text hiển thị
+        expect(screen.getByText('GitHub')).toBeInTheDocument()
+        expect(screen.getByText('Discord')).toBeInTheDocument()
+        expect(screen.getByText('X.com')).toBeInTheDocument()
+        expect(screen.getByText('Bluesky')).toBeInTheDocument()
+    })
+})

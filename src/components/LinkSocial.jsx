@@ -1,14 +1,14 @@
-const LinkSocial = ({ data }) => {
+const LinkSocial = ({ href, textLink, logo }) => {
     return <li>
-        <a href={data.mainLink} target="_blank">
+        <a href={href} target="_blank">
             <svg
                 className="button-icon"
                 role="presentation"
                 aria-hidden="true"
             >
-                <use href={data.iconLink}></use>
+                <use href={logo}></use>
             </svg>
-            {data.textLink}
+            {textLink}
         </a>
     </li>
 };

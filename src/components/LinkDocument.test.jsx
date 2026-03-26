@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
-import { describe, it, expect } from 'vitest';
 import App from '../App';
+import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
+import { describe, it, expect } from 'vitest';
 
 describe('LinkDocument component', () => {
   it('renders link with correct attributes', () => {
@@ -9,8 +9,8 @@ describe('LinkDocument component', () => {
     screen.debug();
 
     // lấy tất cả link
-    const links = screen.getAllByRole('link')
-    expect(links).toHaveLength(2);
+    const links = screen.getAllByRole('link');
+    expect(links).toHaveLength(6);
 
     // kiểm tra từng link
     expect(links[0]).toHaveAttribute('href', 'https://vite.dev/')

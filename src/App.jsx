@@ -12,21 +12,25 @@ function App() {
 
   const socials = [
     {
-      mainLink:"https://github.com/vitejs/vite", 
-      iconLink:"/icons.svg#github-icon",
-      textLink:"GitHub"
+      id: 1,
+      mainLink: "https://github.com/vitejs/vite",
+      iconLink: "/icons.svg#github-icon",
+      textLink: "GitHub"
     },
     {
-      mainLink:"https://chat.vite.dev/", 
-      iconLink:"/icons.svg#discord-icon",
-      textLink:"Discord"
+      id: 2,
+      mainLink: "https://chat.vite.dev/",
+      iconLink: "/icons.svg#discord-icon",
+      textLink: "Discord"
     },
     {
-      mainLink:"https://x.com/vite_js", 
-      iconLink:"/icons.svg#x-icon",
-      textLink:"X.com"
+      id: 3,
+      mainLink: "https://x.com/vite_js",
+      iconLink: "/icons.svg#x-icon",
+      textLink: "X.com"
     },
     {
+      id: 4,
       mainLink: "https://bsky.app/profile/vite.dev",
       iconLink: "/icons.svg#bluesky-icon",
       textLink: "Bluesky"
@@ -61,14 +65,14 @@ function App() {
           <h2>Documentation</h2>
           <p>Your questions, answered</p>
           <ul>
-            <LinkDocument 
+            <LinkDocument
               link="https://vite.dev/"
               thumbnail={viteLogo}
               des="vite logo"
               textLink="Explore Vite"
             />
 
-            <LinkDocument 
+            <LinkDocument
               link="https://react.dev/"
               thumbnail={reactLogo}
               des="detail vite"
@@ -76,18 +80,23 @@ function App() {
             />
           </ul>
         </div>
-        {/* <div id="social">
+        <div id="social">
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#social-icon"></use>
           </svg>
           <h2>Connect with us</h2>
           <p>Join the Vite community</p>
           <ul>
-            {socials.map((item, index) => (
-              (<LinkSocial key={index} data={item} />)
+            {socials.map((item) => (
+              <LinkSocial
+                key={item.id}
+                href={item.mainLink}
+                textLink={item.textLink}
+                logo={item.iconLink}
+              />
             ))}
           </ul>
-        </div> */}
+        </div>
       </section>
 
       <div className="ticks"></div>
